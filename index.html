@@ -111,6 +111,16 @@
         document.getElementById("deposit-amount").value = "";
       });
 
+      // Withdraw button event handler
+      const withdrawBtn = document.getElementById("withdraw");
+      withdrawBtn.addEventListener("click", function () {
+        const withdrawAmount = getInputNumber("withdraw-amount");
+
+        updateSpanText("current-withdraw", withdrawAmount);
+
+        updateSpanText("current-balance", -withdrawAmount);
+      });
+
       function getInputNumber(id) {
         const amount = document.getElementById(id).value;
         const amountNumber = parseFloat(amount);
